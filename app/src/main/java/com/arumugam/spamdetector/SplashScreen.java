@@ -10,12 +10,16 @@ import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieDrawable;
+
 
 public class SplashScreen extends AppCompatActivity {
 
     // exit after specific time
     private static int EXIT_AFTER =7000;
     TextView marqueText;
+    LottieAnimationView lottieAnimationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,8 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         marqueText = (TextView)findViewById(R.id.marqueeView);
         marqueText.setSelected(true);
+        lottieAnimationView =(LottieAnimationView)findViewById(R.id.loadAnimation) ;
+        lottieAnimationView.setRepeatCount(LottieDrawable.INFINITE);
 
         new Handler().postDelayed(new Runnable() {
             @Override
